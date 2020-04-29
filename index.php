@@ -93,6 +93,123 @@
             </div><br><br>
         </section>
         
+        <!-- Pemesanan-->
+        <section class="page-section" id="pemesanan">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Pemesanan Tiket</h2>
+                    <h3 class="section-subheading text-muted">Silahkan isi data diri terlebih dahulu</h3>
+                </div>
+        <form method="post" action="simpan_tiket.php">
+        <div class="form-group row">
+            <label for="inputNIK3" class="col-sm-2 col-form-label">NIK</label>
+            <div class="col-sm-10">
+                <input type="text" name="nik" class="form-control" id="nik" placeholder="NIK Pemesan" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputNama3" class="col-sm-2 col-form-label">Nama Pemesan</label>
+            <div class="col-sm-10">
+                <input type="text" name="nama" class="form-control" id="inputNama3" placeholder="Nama Pemesan" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputAlamat3" class="col-sm-2 col-form-label">Alamat Pemesan</label>
+            <div class="col-sm-10">
+                <textarea name="alamat" class="form-control" placeholder="Alamat Pemesan" required></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Tanggal Berangkat</label>
+            <div class="col-sm-10">
+                <input type="text" name="tgl_berangkat" class="form-control" id="inputTgl3" placeholder="dd/mm/yyyy">
+            </div>
+        </div>
+        <div class="form-group row  ">
+            <label class="col-sm-2 col-form-label">Tujuan</label>
+            <div class="col-sm-10">
+                <select class="form-control" name="tujuan" id="tujuan">
+                    <option>Pilih Tujuan</option>
+                    <?php 
+                    include 'koneksi.php';
+                    $no = 1;
+                    $data = mysqli_query($koneksi,"select * from jadwal_berangkat");
+                    while($d = mysqli_fetch_array($data)){
+                        ?>
+                        <option value="<?php echo $d['id'] ?>"><?php echo $d["relasi"]?></option>
+                        <?php 
+                    }
+                    ?>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Jumlah Penumpang</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="penumpang" name="penumpang">
+                    <option>Pilih Jumlah Penumpang</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Total Pembayaran</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" id="total" name="total" readonly>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Pesan Tiket</button>
+            </div>
+        </div>
+        </form>
+        </div>
+        </section>
+
+        <!-- Konfirmasi-Bayar-->
+        <section class="page-section bg-light" id="konfirmasi-bayar">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Konfirmasi Pembayaran</h2>
+                    <h3 class="section-subheading text-muted">Silahkan konfirmasi pembayaranmu di sini</h3>
+                </div>
+            <form method="post" action="simpan_tiket.php">
+                <div class="form-group row">
+                    <label for="inputNIK4" class="col-sm-2 col-form-label">NIK Pemesan</label>
+                    <div class="custom-file">
+                        <input type="nik4" class="form-control" id="inputNIK4" placeholder="Masukkan NIK Pemesan" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="bukti-bayar" class="col-sm-2 col-form-label">Bukti Pembayaran</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="custom-file">
+                        <button type="submit" class="btn btn-primary">Pesan Tiket</button>
+                    </div>
+                </div>
+            </form>
+            </div><br><br><br><br><br>
+        </section>
+
+        <!-- Contact-->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Tentang Kami</h2>
+                    <h3 class="section-subheading text-muted">Berdiri pada tahun 2020, e-ticket CAPITALIST merupakan pionir online travel agent di Indonesia. Produk yang disediakan terkait dengan pemesanan travel. Misi kami adalah untuk mengakomodasi akses terbaik untuk pemesanan travel online melalui web.</h3>
+                </div>
+            </div>
+        </section>
+        
         <!-- Footer-->
         <footer class="footer py-4">
             <div class="container">
