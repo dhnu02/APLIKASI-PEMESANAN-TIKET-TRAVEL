@@ -28,12 +28,12 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#pemesanan">Pemesanan</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#konfirmasi-bayar">Konfirmasi Bayar</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Tentang Kami</a></li>
-                        <button><li class="nav-item"><a class="js-scroll-trigger" href="#masuk">MASUK</a></li></button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#masuk">MASUK</button>
                     </ul>
                 </div>
             </div>
         </nav>
-        
+
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
@@ -48,7 +48,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase"><br><br>Cara Pemesanan</h2>
-                    <h3 class="section-subheading text-muted">1. Tentukan tanggal keberangkatan dan jenis armada yang akan anda pesan.<br><br>2. Kemudian, isi form untuk pengisian data customer atau pemesan.<br><br>3. Setelah data pemesan selesai diisikan, klik tombol Pesan Tiket, maka akan tampil data pemesan dan juga ada total pembayaran.<br><br>4. Lakukan konfirmasi pembayaran dan upload bukti pembayaran anda pada form yang tersedia.<br><br>5. Apabila telah melakukan pembayaran, maka tiket sudah dapat dicetak oleh pemesan.</h3>
+                    <h3 class="section-subheading text-muted">1. Tentukan tanggal keberangkatan dan jenis armada yang akan anda pesan.<br><br>2. Kemudian, isi form untuk pengisian data customer atau pemesan.<br><br>3. Setelah data pemesan selesai diisikan, kemudian klik tombol "Pesan Tiket".<br><br>4. Lakukan konfirmasi pembayaran dan upload bukti pembayaran anda pada form yang tersedia.<br><br>5. Apabila telah melakukan pembayaran, maka tiket sudah dapat dicetak oleh pemesan.</h3>
                 </div>
             </div><br>
         </section>
@@ -92,7 +92,7 @@
                 </table>
             </div><br><br>
         </section>
-        
+
         <!-- Pemesanan-->
         <section class="page-section" id="pemesanan">
             <div class="container">
@@ -209,7 +209,37 @@
                 </div>
             </div>
         </section>
-        
+
+        <!-- Modal-->
+        <div class="modal fade" id="masuk" tabindex="-1" role="dialog" aria-labelledby="masukLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="masukLabel">MASUK</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="username" class="col-form-label">Username</label>
+                                <input type="text" class="form-control" id="username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pw" class="col-form-label">Password</label>
+                                <input type="password" class="form-control" id="pw" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+                        <button type="button" class="btn btn-primary">Masuk</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Footer-->
         <footer class="footer py-4">
             <div class="container">
@@ -222,7 +252,7 @@
                 </div>
             </div>
         </footer>
-        
+
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
@@ -233,5 +263,19 @@
         <script src="assets/mail/contact_me.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script type="text/javascript">
+            $( "#penumpang" ).change(function() {
+              var id = $("#tujuan").val();
+              var penumpang = $("#penumpang").val();
+              console.log(penumpang);
+              $.ajax({
+                url: "./hitung_total.php?id=" + id + "&penumpang=" + penumpang,
+                success: function(result){
+                    console.log(result);
+                  $("#total").val(result);
+                }
+              });
+            });
+        </script>
     </body>
 </html>
