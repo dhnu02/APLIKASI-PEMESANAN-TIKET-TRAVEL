@@ -136,7 +136,7 @@
                     $data = mysqli_query($koneksi,"select * from jadwal_berangkat");
                     while($d = mysqli_fetch_array($data)){
                         ?>
-                        <option value="<?php echo $d['id'] ?>"><?php echo $d["relasi"]?></option>
+                        <option value="<?php echo $d['id'] ?>"><?php echo $d['relasi']; echo " | "; echo $d['jam_berangkat']; echo "-"; echo $d['jam_datang']; ?></option>
                         <?php 
                     }
                     ?>
@@ -177,7 +177,7 @@
                     <h2 class="section-heading text-uppercase">Konfirmasi Pembayaran</h2>
                     <h3 class="section-subheading text-muted">Silahkan konfirmasi pembayaranmu di sini</h3>
                 </div>
-            <form method="post" action="simpan_tiket.php">
+                <form action="cetak_tiket.php" method="post">
                 <div class="form-group row">
                     <label for="inputNIK4" class="col-sm-2 col-form-label">NIK Pemesan</label>
                     <div class="custom-file">
@@ -193,10 +193,10 @@
                 </div>
                 <div class="form-group row">
                     <div class="custom-file">
-                        <button type="submit" class="btn btn-primary">Pesan Tiket</button>
+                        <button type="submit" class="btn btn-primary">Print Tiket</button>
                     </div>
                 </div>
-            </form>
+                </form>
             </div><br><br><br><br><br>
         </section>
 
@@ -211,6 +211,7 @@
         </section>
 
         <!-- Modal-->
+        <form method="post" action="login.php">
         <div class="modal fade" id="masuk" tabindex="-1" role="dialog" aria-labelledby="masukLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -227,18 +228,19 @@
                                 <input type="text" class="form-control" id="username" required>
                             </div>
                             <div class="form-group">
-                                <label for="pw" class="col-form-label">Password</label>
-                                <input type="password" class="form-control" id="pw" required>
+                                <label for="password" class="col-form-label">Password</label>
+                                <input type="password" class="form-control" id="password" required>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-                        <button type="button" class="btn btn-primary">Masuk</button>
+                        <button type="submit" class="btn btn-primary">Masuk</button>
                     </div>
                 </div>
             </div>
         </div>
+        </form>
 
         <!-- Footer-->
         <footer class="footer py-4">
