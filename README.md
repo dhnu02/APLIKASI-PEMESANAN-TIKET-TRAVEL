@@ -3,6 +3,8 @@
 
 **CARA KERJA APLIKASI BERBASIS WEB** dapat dilihat disini https://youtu.be/W2bJ49Oe83U
 
+**APLIKASI PEMESANAN TIKET BERBASIS WEB** dapat diakses disini https://capitalistticket.000webhostapp.com
+
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 
 ## Nama Kelompok
