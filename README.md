@@ -11,7 +11,7 @@
 1. Eko Iswandaru - 1800018234 (Ketua)
 2. Miftahusalam - 1800018214 (Programmer)
 3. Aldimas de Arsilla - 1800018226 (Web)
-4. Adhitya Rakasiwi - 1800018233 (Mobile)
+4. Adhitya Rakasiwi Lambogo - 1800018233 (Mobile)
 
 ## Screenshot WEB
 ![home](https://user-images.githubusercontent.com/58907747/88258100-84761980-cce9-11ea-9574-d8ae4df43d2b.png)
