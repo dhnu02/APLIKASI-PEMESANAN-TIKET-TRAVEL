@@ -1,9 +1,13 @@
 # APLIKASI-PEMESANAN-TIKET-TRAVEL
 **e-ticket CAPITALIST** _adalah sebuah program aplikasi pemesanan tiket travel sederhana berbasis WEB dan MOBILE guna untuk memenuhi Tugas Akhir Matakuliah PRPL._
 
+**TRELLO** dapat diakses disini https://trello.com/b/z0qxyBzJ/booking-ticket
+
 **CARA KERJA APLIKASI BERBASIS WEB** dapat dilihat disini https://youtu.be/W2bJ49Oe83U
 
 **APLIKASI PEMESANAN TIKET BERBASIS WEB** dapat diakses disini https://capitalistticket.000webhostapp.com
+
+**APLIKASI PEMESANAN TIKET BERBASIS MOBILE** dapat di download diatas atau disini https://drive.google.com/file/d/1U7b4QYlAEzElFO-xB7C7QDfuuO5yW7EO/view
 
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 
